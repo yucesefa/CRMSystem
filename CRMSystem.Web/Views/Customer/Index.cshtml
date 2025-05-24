@@ -1,0 +1,51 @@
+﻿@model List<CRMSystem.Web.ViewModels.CustomerDto>
+@using CRMSystem.Web.Helpers;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var token = Context.Request.Cookies["jwt"];
+    var role = JwtHelper.GetRoleFromToken(token);
+}
+
+<h2>Müşteri Listesi</h2>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color: red;">@ViewBag.Error</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Email</th>
+                <th>Bölge</th>
+                <th>Kayıt Tarihi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>@customer.FirstName</td>
+                    <td>@customer.LastName</td>
+                    <td>@customer.Email</td>
+                    <td>@customer.Region</td>
+                    <td>@customer.RegistrationDate</td>
+                    <td>
+                        @if (role == "Admin")
+                        {
+                            <a asp-action="Edit" asp-route-id="@customer.Id" class="btn btn-warning btn-sm">Düzenle</a>
+                            <a asp-action="Delete" asp-route-id="@customer.Id" class="btn btn-danger btn-sm">Sil</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @if (role == "Admin")
+    {
+        <a asp-action="Create" class="btn btn-primary">Yeni Müşteri Ekle</a>
+    }
+}

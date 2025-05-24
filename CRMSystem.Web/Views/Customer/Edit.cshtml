@@ -1,0 +1,38 @@
+﻿@model CRMSystem.Web.ViewModels.CustomerDto
+@{
+    ViewData["Title"] = "Müşteri Güncelle";
+}
+
+<h2>Müşteri Güncelle</h2>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color: red;">@ViewBag.Error</p>
+}
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label>Ad</label>
+        <input asp-for="FirstName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Soyad</label>
+        <input asp-for="LastName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input asp-for="Email" type="email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Bölge</label>
+        <input asp-for="Region" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Kayıt Tarihi</label>
+        <input asp-for="RegistrationDate" type="date" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Güncelle</button>
+    <a asp-action="Index" class="btn btn-secondary mt-3">Geri</a>
+</form>

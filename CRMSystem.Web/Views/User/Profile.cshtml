@@ -1,0 +1,21 @@
+﻿@model CRMSystem.Web.Models.UserProfileViewModel
+@{
+    Layout = null;
+}
+
+<h2>Profilim</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Kullanıcı Adı</th>
+        <td>@Model.Username</td>
+    </tr>
+    <tr>
+        <th>Rol</th>
+        <td>@Model.Role</td>
+    </tr>
+    <tr>
+        <th>Oluşturulma Tarihi</th>
+        <td>@Model.CreatedAt</td>
+    </tr>
+</table>

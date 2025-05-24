@@ -1,0 +1,28 @@
+﻿@model CRMSystem.Web.ViewModels.UserCreateViewModel
+@{
+    Layout = null;
+}
+
+<h2>Yeni Kullanıcı Ekle</h2>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label>Kullanıcı Adı</label>
+        <input asp-for="Username" class="form-control" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label>Şifre</label>
+        <input asp-for="Password" type="password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label>Rol</label>
+        <select asp-for="Role" class="form-control">
+            <option value="Admin">Admin</option>
+            <option value="User">User</option>
+        </select>
+        <span asp-validation-for="Role" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Kaydet</button>
+</form>
