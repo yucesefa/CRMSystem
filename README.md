@@ -1,31 +1,49 @@
-# CRM System
+# 📊 CRM System – ASP.NET Core & Razor Pages
 
-Bu proje, .NET Core Web API, Razor Pages ve PostgreSQL kullanılarak geliştirilmiş basit bir CRM sistemidir.
+Bu proje, müşteri verilerinin yönetimi için geliştirilen basit bir CRM sistemidir. ASP.NET Core Web API, Razor Pages ve PostgreSQL kullanılarak geliştirilmiştir.
 
-## Özellikler
+## 🚀 Özellikler
 
-- Kullanıcı Girişi / Çıkışı (JWT Authentication)
-- Rol Bazlı Yetkilendirme (Admin / User)
-- Müşteri CRUD İşlemleri
-- Kullanıcı Yönetimi (Admin paneli üzerinden)
-- Şifre Güncelleme
-- Cookie tabanlı oturum yönetimi
+- ✅ JWT ile kullanıcı girişi ve çıkışı
+- ✅ Rol bazlı erişim kontrolü (Admin / User)
+- ✅ Müşteri CRUD işlemleri (Listeleme, Ekleme, Güncelleme, Silme)
+- ✅ Kullanıcı CRUD (sadece admin)
+- ✅ Şifre güncelleme
+- ✅ Cookie tabanlı oturum yönetimi
+- ✅ Gelişmiş hata ve yetki yönetimi
+- ✅ Swagger üzerinden API test imkanı
 
-## Teknolojiler
+## 🛠️ Kullanılan Teknolojiler
 
-- ASP.NET Core 8
-- Razor Pages
-- PostgreSQL (EF Core)
+- ASP.NET Core 8 (Web API)
+- Razor Pages (UI)
+- Entity Framework Core + PostgreSQL
 - JWT Authentication
 - RESTful API
 - Visual Studio 2022
 
-## Başlangıç
+## 🧰 Kurulum Talimatları
 
-1. API projesinde `appsettings.json` dosyasına veritabanı bağlantısını ekleyin.
-2. EF Core ile migration'ları uygulayın:
-3. API’yi başlatın (`CRMSystem.API`)
-4. UI projesini başlatın (`CRMSystem.UI`)
-5. Giriş için örnek kullanıcı:
-Kullanıcı: admin
-Şifre: admin123
+1. **Veritabanı ayarlarını yapın:**
+   - `appsettings.json` içindeki connection string'i PostgreSQL'e göre ayarlayın.
+
+2. **EF Core Migration Uygulama:**
+
+3. **Projeyi çalıştırın:**
+- `CRMSystem.API` ve `CRMSystem.UI` projelerini birlikte başlatın.
+
+## 🔐 Örnek Giriş Bilgileri
+Kullanıcı Adı: admin
+Şifre: 123456
+Rol: Admin
+
+
+## 🤝 Katkıda Bulun
+
+Katkı sağlamak istiyorsanız `pull request` göndererek başlayabilirsiniz. Detaylar için CONTRIBUTING.md dosyasına göz atabilirsiniz.
+
+---
+
+## 🧾 Lisans
+
+Bu proje özel test ve geliştirme amaçlıdır. Ticari kullanımlarda telif içerikleri göz önünde bulundurulmalıdır.
